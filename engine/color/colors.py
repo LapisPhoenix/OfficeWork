@@ -1,4 +1,5 @@
 import curses
+from curses import wrapper
 
 
 class Colors:
@@ -20,7 +21,8 @@ class Colors:
             "WHITE_BLACK": (curses.COLOR_WHITE, curses.COLOR_BLACK),
             "BLACK_WHITE": (curses.COLOR_BLACK, curses.COLOR_WHITE),
             "GREEN_RED": (curses.COLOR_GREEN, curses.COLOR_RED),
-            "RED_GREEN": (curses.COLOR_RED, curses.COLOR_GREEN)
+            "RED_GREEN": (curses.COLOR_RED, curses.COLOR_GREEN),
+            "GREEN_BLACK": (curses.COLOR_GREEN, curses.COLOR_BLACK),
         }
 
         for index, (name, (fg, bg)) in enumerate(colors.items(), start=1):
@@ -31,6 +33,10 @@ class Colors:
         if name in self._pairs:
             return self._pairs[name]
         raise AttributeError(f"'{self.__class__.__name__}' object has no attribute '{name}'")
+
+    @staticmethod
+    def normalize(rgb: tuple[int, int, int]) -> tuple[int, int, int]:
+        return tuple(int(((value / 255) * (1000 - 0)) + 0) for value in rgb)
 
 
 # For the brits

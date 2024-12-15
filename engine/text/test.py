@@ -2,6 +2,7 @@ import curses
 from curses import wrapper
 from time import sleep
 from engine.color.colors import Colors
+from curses import newwin
 
 
 def animation(stdscr: curses.window) -> None:
@@ -22,17 +23,6 @@ def animation(stdscr: curses.window) -> None:
 
 def main(stdscr: curses.window) -> None:
     colors = Colors(stdscr)
-    top_left = (0, 0)
-    top_right = (0, 9)
-    bottom_left = (4, 0)
-    bottom_right = (4, 9)
-    stdscr.clear()
-    stdscr.addstr(*top_left, "a", colors.GREEN_RED)
-    stdscr.addstr(*top_right, "b")
-    stdscr.addstr(*bottom_left, "b")
-    stdscr.addstr(*bottom_right, "c")
-    stdscr.refresh()
-    stdscr.getch()
 
 
 

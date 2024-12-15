@@ -1,14 +1,11 @@
-class OfficeWork:
-    def __init__(self) -> None:
-        ...
-
-    def _main_game_loop(self) -> None:
-        ...
-
-    def run(self) -> None:
-        ...
+from curses import wrapper
+from officework.officework import OfficeWork
 
 
-if __name__ == "__main__":
-    game = OfficeWork()
-    game.run()
+def main(screen):
+    of = OfficeWork(screen)
+    of.run()
+
+
+if __name__ == '__main__':
+    wrapper(main)
