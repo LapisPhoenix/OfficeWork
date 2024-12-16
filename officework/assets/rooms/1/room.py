@@ -34,5 +34,17 @@ class GameRoom(Room):
         self.images = [
             "./officework/assets/rooms/1/1.owimg",
         ]
+	
+	# Refactor into Person Class + Possible Dialogue Class
+	self.thomas_edison = [  # Dialogue
+	    {
+	        "said": False,
+		"text": "...",
+		"responses: [
+		    "...",
+		    "..."
+		]
+	    }
+	]
 
     def start(self):
