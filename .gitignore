@@ -1,3 +1,5 @@
 /venv/
-*/__pycache__/
+*/__pycache__/*
 *.sublime*
+temp
+/engine/text/__pycache__/

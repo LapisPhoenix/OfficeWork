@@ -1,8 +1,9 @@
-from dataclasses import dataclass
 from officework.notebook import Notebook
+from engine.text.owimage import OWImage
 
 
-@dataclass
 class Room:
-    tasks: list[str]
-    notebook: Notebook
+    def __init__(self):
+        self.tasks = []
+        self.notebook = Notebook([])
+        self.view = OWImage()

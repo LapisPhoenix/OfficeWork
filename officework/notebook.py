@@ -1,5 +1,5 @@
 class Notebook(list):
-    def __init__(self, notes: list[str], *args, **kwargs):
+    def __init__(self, notes: list[dict[str, bool | str]], *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         for note in notes:
